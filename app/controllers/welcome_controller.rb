@@ -1,6 +1,5 @@
 class WelcomeController < ApplicationController
-  before_action :authenticate_session!
-  before_action :authenticate_model!	
+  #before_action :authenticate_session!
   def index
   end	
   def contact
