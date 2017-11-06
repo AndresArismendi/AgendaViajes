@@ -1,0 +1,26 @@
+<h1>Guías turísticos</h1>
+
+<table class="table table-striped">
+  <tr>
+  
+    <th>Correo</th>
+    <th>Estado</th>
+    <th>Estado</th>
+  
+    <th></th>
+  </tr>
+  <% @sessions.each do |session| %>
+  <tr>
+    <% if session.status == 1 %>
+    <td><%= session.email %></td>
+    <td><%= session.status %></td>
+    <td><%= session.admin %></td>
+    <% end %>
+    
+    <td style="width: 1px; white-space: nowrap">
+      <%#= link_to 'Editar', edit_session_path(session), class: 'btn btn-primary btn-sm' %>
+    </td>
+    
+  </tr>
+  <% end %>
+</table>

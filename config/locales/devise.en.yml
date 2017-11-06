@@ -3,19 +3,19 @@
 en:
   devise:
     confirmations:
-      confirmed: "Your email address has been successfully confirmed."
+      confirmed: "Tu correo ha sido correctamente confirmado."
       send_instructions: "You will receive an email with instructions for how to confirm your email address in a few minutes."
       send_paranoid_instructions: "If your email address exists in our database, you will receive an email with instructions for how to confirm your email address in a few minutes."
     failure:
-      already_authenticated: "You are already signed in."
-      inactive: "Your account is not activated yet."
-      invalid: "Invalid %{authentication_keys} or password."
-      locked: "Your account is locked."
+      already_authenticated: "Has iniciado sesión."
+      inactive: "Tu cuenta no se encuentra activada aún."
+      invalid: " %{authentication_keys} invalido o contraseña."
+      locked: "Tu cuenta está bloqueada"
       last_attempt: "You have one more attempt before your account is locked."
-      not_found_in_database: "Invalid %{authentication_keys} or password."
-      timeout: "Your session expired. Please sign in again to continue."
-      unauthenticated: "You need to sign in or sign up before continuing."
-      unconfirmed: "You have to confirm your email address before continuing."
+      not_found_in_database: "Error en  %{authentication_keys} o contraseña."
+      timeout: "Tu sesión ha expirado. Por favor iniciar sesión para continuar."
+      unauthenticated: "Necesitas iniciar sesión o registrarte para continuar"
+      unconfirmed: "Necesitas confirmar tu correo para continuar."
     mailer:
       confirmation_instructions:
         subject: "Confirmation instructions"
@@ -24,9 +24,9 @@ en:
       unlock_instructions:
         subject: "Unlock instructions"
       email_changed:
-        subject: "Email Changed"
+        subject: "Correo cambiado"
       password_change:
-        subject: "Password Changed"
+        subject: "Contraseña cambiada"
     omniauth_callbacks:
       failure: "Could not authenticate you from %{kind} because \"%{reason}\"."
       success: "Successfully authenticated from %{kind} account."
@@ -45,9 +45,9 @@ en:
       update_needs_confirmation: "You updated your account successfully, but we need to verify your new email address. Please check your email and follow the confirm link to confirm your new email address."
       updated: "Your account has been updated successfully."
     sessions:
-      signed_in: "Signed in successfully."
-      signed_out: "Signed out successfully."
-      already_signed_out: "Signed out successfully."
+      signed_in: "Inicio de sesión correctamente."
+      signed_out: "Has cerrado sesión correctamente."
+      already_signed_out: "Te has desconectado correctamente."
     unlocks:
       send_instructions: "You will receive an email with instructions for how to unlock your account in a few minutes."
       send_paranoid_instructions: "If your account exists, you will receive an email with instructions for how to unlock it in a few minutes."
