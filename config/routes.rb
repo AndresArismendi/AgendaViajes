@@ -1,7 +1,10 @@
 Rails.application.routes.draw do  
   
-  devise_for :sessions
   
+  devise_for :sessions, controllers: {
+                   sessions: 'sessions/sessions', 
+                   registrations: 'sessions/registrations'}
+
   #resources :sessions,  :only => [ :index, :new, :edit, :create, :update ]
   get '/sessions/:id/edit' => 'sessions#edit', :as => 'editar_session'
   get 'editar/index'

@@ -20,6 +20,22 @@
     <%= f.label :confirmación_de_contraseña %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
+  <div class="field">
+    <%= f.label :nombre %><br />
+    <%= f.text_field :nombre, autocomplete: "off" %>
+  </div>
+  <div class="field">
+    <%= f.label :rut %><br />
+    <%= f.text_field :rut, autocomplete: "off" %>
+  </div>
+  <div class="field">
+    <%= f.label :fono %><br />
+    <%= f.text_field :fono, autocomplete: "off" %>
+  </div>
+  <div class="field">
+    <%= f.label :tipo_de_vehículo %><br />
+    <%= f.text_field :tipo_vehiculo, autocomplete: "off" %>
+  </div>
 
   <div class="actions">
     <%= f.submit "Registrar" %>
