@@ -1,25 +1,30 @@
 <h1>Otros</h1>
 
-<table class="table table-striped">
-  <tr>
-  
-    <th>Correo</th>
-    <th>Estado</th>
-    <th>Estado</th>
-  
-    <th></th>
-  </tr>
-  <% @sessions.each do |session| %>
-  <tr>
-  	<% if session.status == 0 %>
-    <td><%= session.email %></td>
-    <td><%= session.status %></td>
-    <td><%= session.admin %></td>
+<table class="table table-bordered table-hover table-striped">
+  <thead>
+    <tr>    
+      <th scope="col">#</th>
+      <th scope="col">Correo</th>
+      <th scope="col">Estado</th>
+      <th scope="col">Estado</th>      
+    </tr>
+  </thead>
+  <% contador = 1 %>
+  <tbody>
+    <% @sessions.each do |session| %>
+    <tr>
+    	<% if session.status == 0 %>
+      <td> <%= contador %></td>
+      <td><%= session.email %></td>
+      <td><%= session.status %></td>
+      <td><%= session.admin %></td>
+      <% contador += 1 %>
+      <!--<td style="width: 1px; white-space: nowrap">-->
+        <%#= link_to 'Editar', edit_session_path(session), class: 'btn btn-primary btn-sm' %>
+      <!--</td>-->    
+    </tr>
     <% end %>
-    <td style="width: 1px; white-space: nowrap">
-      <%#= link_to 'Editar', edit_session_path(session), class: 'btn btn-primary btn-sm' %>
-    </td>
-    
-  </tr>
+
+  </tbody>
   <% end %>
 </table>

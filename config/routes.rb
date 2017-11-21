@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get '/sessions/:id/edit' => 'sessions#edit', :as => 'editar_session'
   get 'editar/index'
 
-  get 'editar/show'
+  get 'editar/show', :as => 'show'
 
   root 'welcome#index' 
   
