@@ -1,12 +1,16 @@
-<h1>Otros</h1>
+<h1>Guías turísticos</h1>
 
 <table class="table table-bordered table-hover table-striped">
   <thead>
     <tr>    
       <th scope="col">#</th>
       <th scope="col">Correo</th>
-      <th scope="col">Estado</th>
-      <th scope="col">Estado</th>      
+      <th scope="col">Nombre</th>
+      <th scope="col">Rut</th>
+      <th scope="col">Teléfono</th>
+      <th scope="col">Tipo de vehículo</th>
+      <th scope="col">usuario</th>
+      <th scope="col">Admin</th>      
     </tr>
   </thead>
   <% contador = 1 %>
@@ -16,7 +20,11 @@
     	<% if session.status == 0 %>
       <td> <%= contador %></td>
       <td><%= session.email %></td>
-      <td><%= session.status %></td>
+      <td><%= session.nombre %></td>
+      <td><%= session.rut %></td>
+      <td><%= session.fono %></td>
+      <td><%= session.tipo_vehiculo %></td>
+      <td>guía turístico</td>
       <td><%= session.admin %></td>
       <% contador += 1 %>
       <!--<td style="width: 1px; white-space: nowrap">-->
