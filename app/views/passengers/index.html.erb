@@ -1,0 +1,58 @@
+<p id="notice"><%= notice %></p>
+<h1>Pasajeros INDOPROCHILE</h1>
+<br>
+<div style="width: 30rem; margin-bottom: 20px;"><input type="text" id="myInput" class="form-control" onkeyup="myFunction()" placeholder="Buscar en tabla.."></div>
+<table class="table table-bordered table-hover table-striped" > 
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Nombre responsable</th>
+      <!--<th>Teléfono</th>
+      <th>Correo</th>-->
+      <th>Cantidad de pasajeros</th>
+      <th>Hostal</th>
+      <!--<th>Documento</th>-->
+      <th>Idioma</th>
+      <th>Booking</th>
+      <th>Estado disponibilidad</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody id="myTable">
+    <% contador = 1%>
+    <% @passengers.each do |passenger| %>
+      <tr>
+        <td><%=contador %></td>
+        <td id="nombre"><%= passenger.nombre %></td>
+        <!--<td><%= passenger.telefono %></td>
+        <td><%= passenger.email %></td>-->
+        <td><%= passenger.cantidad %></td>
+        <td><%= passenger.hostal %></td>
+        <!--<td><%= passenger.documento %></td>-->
+        <td><%= passenger.idioma %></td>
+        <td><%= passenger.booking %></td>
+        <td><%= passenger.estado_disponibilidad %></td>
+        <td><%= link_to 'Ver', passenger, class: "btn btn-default" %></td>
+        <td><%= link_to 'Editar', edit_passenger_path(passenger), {style: "color: #fff;",class: "btn btn-warning"} %></td>
+        <td><%= link_to 'Eliminar', passenger, method: :delete, data: { confirm: '¿Estás seguro?' }, style: "color: #fff;", class: "btn btn-danger" %></td>
+      </tr>
+      <% contador += 1%>
+    <% end %>
+  </tbody>
+</table>
+<br>
+<%= link_to 'Nuevo pasajero', new_passenger_path, {class: "btn btn-success", style: "color: #fff;" }%>
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {    
+    var value = $(this).val().toLowerCase();
+    var table = document.getElementById("myTable");
+    var tr = table.getElementsByTagName("tr");    
+  
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>

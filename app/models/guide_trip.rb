@@ -1,0 +1,2 @@
+class GuideTrip < ApplicationRecord
+end

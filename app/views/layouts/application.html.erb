@@ -9,13 +9,19 @@
   </head>
   <body> 
 
-    <div class="container">    
+    <!--<div class="container">    -->
     <%= render 'shared/header' %>
     <%= render 'shared/devisemessage' %>
-    	<%= yield %>	
-    
+    	<%= yield %>	   
    
-    </div>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!--</div>-->
+	
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript">    
+    var str1 = ".menu-";
+    var str2 = menuFlag;
+    var menu = str1.concat(str2);    
+    $(menu).addClass("active");
+  </script>
   </body>
 </html>

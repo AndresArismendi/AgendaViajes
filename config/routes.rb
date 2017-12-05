@@ -1,6 +1,11 @@
 Rails.application.routes.draw do  
   
   
+  resources :trips
+  resources :guide_trips
+  resources :passenger_trips
+  resources :trip_types
+  resources :passengers
   devise_for :sessions, controllers: {
                    sessions: 'sessions/sessions', 
                    registrations: 'sessions/registrations'}

@@ -1,0 +1,62 @@
+<%= form_for(passenger) do |f| %>
+  <% if passenger.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(passenger.errors.count, "error") %> prohibited this passenger from being saved:</h2>
+
+      <ul>
+      <% passenger.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nombre %>
+    <%= f.text_field :nombre %>
+  </div>
+
+  <div class="field">
+    <%= f.label :telefono %>
+    <%= f.text_field :telefono %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+
+  <div class="field">
+    <%= f.label :cantidad %>
+    <%= f.number_field :cantidad %>
+  </div>
+
+  <div class="field">
+    <%= f.label :hostal %>
+    <%= f.text_field :hostal %>
+  </div>
+
+  <div class="field">
+    <%= f.label :documento %>
+    <%= f.text_field :documento %>
+  </div>
+
+  <div class="field">
+    <%= f.label :idioma %>
+    <%= f.text_field :idioma %>
+  </div>
+
+  <div class="field">
+    <%= f.label :booking %>
+    <%= f.text_field :booking %>
+  </div>
+
+  <div class="field">
+    <%= f.label :estado_disponibilidad %>
+    <%= f.check_box :estado_disponibilidad %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

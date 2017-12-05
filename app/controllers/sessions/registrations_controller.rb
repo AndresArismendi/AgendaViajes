@@ -40,7 +40,7 @@ class Sessions::RegistrationsController < Devise::RegistrationsController
 
   # If you have extra params to permit, append them to the sanitizer.
    def configure_sign_up_params
-      devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:nombre, :email, :password, :password_confirmation, :rut) }
+      devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:nombre, :email, :password, :password_confirmation, :rut, :fono, :tipo_vehiculo, :telefono_emergencia, :nombre_contacto_emergencia, :patente_vehiculo) }
    end
 
   # If you have extra params to permit, append them to the sanitizer.
@@ -60,10 +60,10 @@ class Sessions::RegistrationsController < Devise::RegistrationsController
   private
 
   def sign_up_params
-    params.require(:session).permit(:nombre, :rut, :email, :password, :password_confirmation, :nombre, :rut, :fono, :tipo_vehiculo)
+    params.require(:session).permit(:nombre, :rut, :email, :password, :password_confirmation, :nombre, :rut, :fono, :tipo_vehiculo, :telefono_emergencia, :nombre_contacto_emergencia, :patente_vehiculo)
   end
 
   def account_update_params
-    params.require(:session).permit(:nombre, :rut, :email, :password, :password_confirmation, :nombre, :rut, :fono, :tipo_vehiculo)
+    params.require(:session).permit(:nombre, :rut, :email, :password, :password_confirmation, :nombre, :rut, :fono, :tipo_vehiculo, :telefono_emergencia, :nombre_contacto_emergencia, :patente_vehiculo)
   end
 end

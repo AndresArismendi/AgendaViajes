@@ -1,0 +1,27 @@
+<%= form_for(guide_trip) do |f| %>
+  <% if guide_trip.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(guide_trip.errors.count, "error") %> prohibited this guide_trip from being saved:</h2>
+
+      <ul>
+      <% guide_trip.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+   <div class="field">
+    <%= f.label :id_trip %>
+    <%= f.number_field :id_trip %>
+  </div>
+
+  <div class="field">
+    <%= f.label :id_guide %>
+    <%= f.number_field :id_guide %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

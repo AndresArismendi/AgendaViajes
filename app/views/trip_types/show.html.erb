@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @trip_type.nombre %>
+</p>
+
+<%= link_to 'Editar', edit_trip_type_path(@trip_type) %> |
+<%= link_to 'Atrás', trip_types_path %>
+<script type="text/javascript">
+	var menuFlag = 5;
+</script>

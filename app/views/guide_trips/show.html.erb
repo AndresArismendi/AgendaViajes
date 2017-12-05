@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Id guide trip:</strong>
+  <%= @guide_trip.id_guide_trip %>
+</p>
+
+<p>
+  <strong>Id trip:</strong>
+  <%= @guide_trip.id_trip %>
+</p>
+
+<p>
+  <strong>Id guide:</strong>
+  <%= @guide_trip.id_guide %>
+</p>
+
+<%= link_to 'Editar', edit_guide_trip_path(@guide_trip) %> |
+<%= link_to 'Atrás', guide_trips_path %>

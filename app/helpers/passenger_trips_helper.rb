@@ -1,0 +1,2 @@
+module PassengerTripsHelper
+end

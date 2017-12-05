@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Viajes</h1>
+
+<div style="width: 30rem; margin-bottom: 20px;"><input type="text" id="myInput" class="form-control" onkeyup="myFunction()" placeholder="Buscar en tabla.."></div>
+<table class="table table-bordered table-hover table-striped" > 
+  <thead>
+    <tr>  
+      <th>#</th>    
+      <th>Nombre pasajero</th>
+      <th>Nombre guía</th>
+      <th>Id trip type</th>
+      <th>Trip name</th>
+      <th>Trip date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody id="myTable">
+    <% @trips.each do |trip| %>
+      <tr> 
+        <td><%= trip.id %></td>       
+        <td><%= @passengers.find(trip.id_passenger_trip).nombre %></td>
+        <td><%= @guides.find(trip.id_guide_passenger).nombre %></td>
+        <td><%= @trip_type.find(trip.id_trip_type).nombre %></td>
+        <td><%= trip.trip_name %></td>
+        <td><%= trip.trip_date %></td>
+        <td><%= link_to 'Ver', trip, class: "btn btn-default" %></td>
+        <td><%= link_to 'Editar', edit_trip_path(trip), {class: "btn btn-warning", style: "color: #fff;"} %></td>
+        <td><%= link_to 'Eliminar', trip, method: :delete, data: { confirm: '¿Estás seguro?' }, class: "btn btn-danger", style: "color: #fff;" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nuevo viaje', new_trip_path, {class: "btn btn-success", style: "color: #fff;" } %>
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {    
+    var value = $(this).val().toLowerCase();
+    var table = document.getElementById("myTable");
+    var tr = table.getElementsByTagName("tr");    
+  
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+<script type="text/javascript">
+  var menuFlag = 4;
+</script>

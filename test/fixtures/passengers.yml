@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombre: MyString
+  telefono: MyString
+  email: MyString
+  cantidad: 1
+  hostal: MyString
+  documento: MyString
+  idioma: MyString
+  booking: MyString
+  estado_disponibilidad: false
+
+two:
+  nombre: MyString
+  telefono: MyString
+  email: MyString
+  cantidad: 1
+  hostal: MyString
+  documento: MyString
+  idioma: MyString
+  booking: MyString
+  estado_disponibilidad: false

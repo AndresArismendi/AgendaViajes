@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id_guide_trip: 1
+  id_trip: 1
+  id_guide: 1
+
+two:
+  id_guide_trip: 1
+  id_trip: 1
+  id_guide: 1

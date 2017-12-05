@@ -2,8 +2,7 @@
 <!-- Fixed navbar -->
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
-        <div class="navbar-header">
-          
+        <div class="navbar-header">          
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
@@ -12,14 +11,27 @@
           </button>          
           <%= image_tag("/assets/cropped-logoblancopng.png", size: "30", class: "image-top") %>
           <%= link_to "Agenda de viajes ", root_path, class: "navbar-brand" %>          
-        </div> 
-        <!--       
+        </div>   
         <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li class="dropdown">
+          <ul class="nav navbar-nav" style="margin-left: 30px;">
+            <li id="menu-1" class="menu-1"><%= link_to "Home", root_path %></li>
+            <li class="dropdown menu-2 menu-3">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Usuarios <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li class="menu-2"><%= link_to 'Guías turísticos', show_path %></li>
+                <li class="menu-3"><%= link_to 'Otros', editar_path %></li>
+              </ul>
+            </li>
+            <li class="dropdown menu-5 menu-4">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Viajes <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li class="menu-4"><%= link_to 'Viajes', trips_path %></li>
+                <li class="menu-5"><%= link_to 'Tipos de viajes', trip_types_path %></li>
+              </ul>
+            </li>
+            
+            
+            <!--<li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><a href="#">Action</a></li>
@@ -30,19 +42,19 @@
                 <li><a href="#">Separated link</a></li>
                 <li><a href="#">One more separated link</a></li>
               </ul>              
-            </li>            
+            </li>  -->          
           </ul>          
-        </div>
-        -->
-        <div class="navbar-header navbar-right">
-          <ul class="nav navbar-nav">
-            
-            <li>
-            <%= link_to destroy_session_session_path, :method => :delete do %>
-              <i class="fa fa-window-close" aria-hidden="true"></i> Desconectar
-            <% end %>  
-            </li>
-          </ul>
+          
+          <div class="navbar-header navbar-right">
+            <ul class="nav navbar-nav">
+              
+              <li>
+              <%= link_to destroy_session_session_path, :method => :delete do %>
+                <i class="fa fa-window-close" aria-hidden="true"></i> Desconectar
+              <% end %>  
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </nav>
@@ -58,43 +70,20 @@
           </button>
           <%= image_tag("/assets/cropped-logoblancopng.png", size: "30", class: "image-top") %>
           <%= link_to "Agenda de viajes ", root_path, class: "navbar-brand" %>          
-        </div> 
-        <!--       
+        </div>                
         <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li role="separator" class="divider"></li>
-                <li class="dropdown-header">Nav header</li>
-                <li><a href="#">Separated link</a></li>
-                <li><a href="#">One more separated link</a></li>
-              </ul>              
-            </li>            
-          </ul>          
-        </div>
-        -->
         <div class="navbar-header navbar-right">
-        <i class="fa fa-user-o" aria-hidden="true"></i>
-          <ul class="nav navbar-nav">
-            
+          <i class="fa fa-user-o" aria-hidden="true"></i>
+          <ul class="nav navbar-nav">            
             <li> 
-            <%= link_to session_session_path do%>
-              <i class="fa fa-user-o" aria-hidden="true"></i> Iniciar sesión
-            <% end %>
-
-            
-
+              <%= link_to session_session_path do%>
+                <i class="fa fa-user-o" aria-hidden="true"></i> Iniciar sesión
+              <% end %>
             </li>
           </ul>
         </div>
       </div>
-    </nav>
+    </div>
+  </nav>
 
 <% end %>

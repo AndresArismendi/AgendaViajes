@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id_trip: 1
+  id_passenger_trip: 1
+  id_guide_passenger: 1
+  id_trip_type: 1
+  trip_name: MyString
+  trip_date: 2017-11-27
+
+two:
+  id_trip: 1
+  id_passenger_trip: 1
+  id_guide_passenger: 1
+  id_trip_type: 1
+  trip_name: MyString
+  trip_date: 2017-11-27

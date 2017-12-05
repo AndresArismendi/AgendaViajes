@@ -1,0 +1,44 @@
+<%= form_for(trip) do |f| %>
+  <% if trip.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(trip.errors.count, "error") %> prohibited this trip from being saved:</h2>
+      <ul>
+      <% trip.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+   <div class="field">
+    <%= f.label :Pasajero %>
+    <%= f.select :id_passenger_trip, options_for_select(@passengers.collect{ |tr| [tr.nombre ,tr.id] })%>
+    
+  </div>
+
+  <div class="field">
+    <%= f.label :guía_turístico %>
+    <%= f.select :id_guide_passenger, options_for_select(@guias_turisticos.collect{ |tr| [tr.nombre ,tr.id] })%>    
+    
+  </div>
+
+  <div class="field">
+    <%= f.label :Tipo_de_viaje %>
+    <%= f.select :id_trip_type, options_for_select(@trip_type.collect{ |tr| [tr.nombre ,tr.id] })%>
+    
+  </div>
+
+  <div class="field">
+    <%= f.label :Descripción_o_nombre_de_vije %>
+    <%= f.text_area :trip_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Fecha_de_viaje %>
+    <%= f.date_select :trip_date %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
