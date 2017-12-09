@@ -23,7 +23,7 @@ Rails.application.routes.draw do
   get 'welcome/index' => 'welcome#index', :as => 'welcome_index'
   get 'welcome/contact'      
   get 'editar/index', :as => 'editar'
-
+  get 'passengers', :as => 'pasajeros'
 
   
  
