@@ -48,9 +48,11 @@
           <div class="navbar-header navbar-right">
             <ul class="nav navbar-nav">
               
+                
+              
               <li>
               <%= link_to destroy_session_session_path, :method => :delete do %>
-                <i class="fa fa-window-close" aria-hidden="true"></i> Desconectar
+                 <i class="fa fa-user-circle-o" aria-hidden="true"></i> Desconectar     
               <% end %>  
               </li>
             </ul>
@@ -77,7 +79,7 @@
           <ul class="nav navbar-nav">            
             <li> 
               <%= link_to session_session_path do%>
-                <i class="fa fa-user-o" aria-hidden="true"></i> Iniciar sesión
+                <i class="fa fa-window-close" aria-hidden="true"></i> Iniciar sesión
               <% end %>
             </li>
           </ul>

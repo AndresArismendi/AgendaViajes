@@ -31,6 +31,10 @@
           <%= f.label :nombre %><br />
           <%= f.text_field :nombre, autocomplete: "off" %>
         </div>
+        <div class="field">
+          <%= f.label :patente_vehículo %><br />
+          <%= f.text_field :patente_vehiculo, autocomplete: "off" %>
+        </div>
       </div>
       <div class="col-md-6">
         <div class="field">
@@ -52,18 +56,15 @@
         <div class="field">
           <%= f.label :nombre_contacto_emergencia %><br />
           <%= f.text_field :nombre_contacto_emergencia, autocomplete: "off" %>
-        </div>
-        <div class="field">
-          <%= f.label :patente_vehículo %><br />
-          <%= f.text_field :patente_vehiculo, autocomplete: "off" %>
-        </div>
-        <br><br>
-        <div class="actions" style="margin-bottom: 10px;">
-          <%= f.submit "Registrar", :class => 'btn btn-default'%>
+        </div>        
+        <br>
+        <div class="actions" style="margin-bottom: 10px;">          
         </div>  
-        <% end %>        
-        <%= render "devise/shared/links" %>         
-      </div>
+        </div>
+        <%= f.submit "Registrar", :class => 'btn btn-primary'%>
+      <% end %>        
+      <%= render "devise/shared/links" %>         
+      
     </div>
   </div>
   <div class="col-md-2"></div>

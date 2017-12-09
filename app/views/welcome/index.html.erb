@@ -1,3 +1,95 @@
+<% if session_signed_in? && current_session.admin == true %>
+	admin <%= current_session.nombre %>
+	
+
+<% end %>
+<% if session_signed_in? and current_session.admin == false %>
+
+	<div class="col-md-4">
+
+	    <div class="panel panel-default">
+	      <div class="panel-heading"><b>Viajes semana actual: <%= current_session.nombre %></b></div>
+	      <div class="panel-body">
+	      	<table class="table table-bordered table-hover table-striped" > 
+			  <thead>
+			    <tr>  
+			      <th>#</th>    
+			      <th>Nombre pasajero</th>			      
+			      <th>Tipo viaje</th>			      
+			      <th>Fecha</th>			      
+			      <th> </th>
+			    </tr>
+			  </thead>
+
+			  <tbody id="myTable">
+			  	<% contador = 1 %>
+     			<% @viajes = @trips.where(id_guide_passenger: current_session.id) %>     			
+		    	<% @viajes.each do |trip| %>		    	
+		    	<% fechaactual = Date.today %>
+		    		<% if trip.trip_date >= fechaactual && trip.trip_date < (fechaactual+7)   %>  
+		    		  <tr> 
+				        <td><%= contador %></td>       				        
+				        <td><%= @passengers.find(trip.id_passenger_trip).nombre %></td>
+				        <td><%= @trip_type.find(trip.id_trip_type).nombre %></td>				        
+				        <td><%= trip.trip_date %></td>				        				        
+				        <td><%= link_to 'Ver', trip, class: "btn btn-default" %></td>
+				      </tr>
+				      <% contador = contador + 1 %>
+			        <% end %>		    	
+		    	<% end %>
+	    	  </tbody>
+			</table>
+	      </div>
+	    </div>	
+	</div>
+
+	<div class="col-md-4">
+		<div class="panel panel-default">
+	      <div class="panel-heading"><b>Viajes próxima semana: <%= current_session.nombre %></b></div>
+	      <div class="panel-body">
+	      	<table class="table table-bordered table-hover table-striped" > 
+			  <thead>
+			    <tr>  
+			      <th>#</th>    
+			      <th>Nombre pasajero</th>			      
+			      <th>Tipo viaje</th>			      
+			      <th>Fecha</th>			      
+			      <th> </th>
+			    </tr>
+			  </thead>
+
+			  <tbody id="myTable">
+			  	<% contador = 1 %>
+     			<% @viajes = @trips.where(id_guide_passenger: current_session.id) %>     			
+		    	<% @viajes.each do |trip| %>		    	
+		    	<% fechaactual = Date.today %>
+  		    		<% if trip.trip_date <= (fechaactual+14) && trip.trip_date > (fechaactual+7)   %>  
+			    		<tr> 
+					       <td><%= contador %></td>       				        
+					       <td><%= @passengers.find(trip.id_passenger_trip).nombre %></td>
+					       <td><%= @trip_type.find(trip.id_trip_type).nombre %></td>				        
+					       <td><%= trip.trip_date %></td>				        				        
+					       <td><%= link_to 'Ver', trip, class: "btn btn-default" %></td>
+					    </tr>
+					    <% contador = contador + 1 %>
+				    <% end %>		    	
+		    	<% end %>
+	    	  </tbody>
+			</table>
+
+
+
+	    </div>
+	</div>
+
+	<div class="col-md-4">
+
+	</div>
+
+
+<% end %>
+
+
 <script type="text/javascript">
 	var menuFlag = 1;
 </script>
