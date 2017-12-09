@@ -71,3 +71,6 @@ class PassengersController < ApplicationController
       params.require(:passenger).permit(:nombre, :telefono, :email, :cantidad, :hostal, :documento, :idioma, :booking, :estado_disponibilidad)
     end
 end
+
+
+menu-6
