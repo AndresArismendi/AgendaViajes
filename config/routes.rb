@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   #resources :sessions,  :only => [ :index, :new, :edit, :create, :update ]
   get '/sessions/:id/edit' => 'sessions#edit', :as => 'editar_session'
-  get 'editar/index'
+  get 'editar/index' => 'editar#index'
 
   get 'editar/show', :as => 'show'
 
@@ -21,9 +21,8 @@ Rails.application.routes.draw do
   devise_for :models
   get '/' => 'welcome#index'
   get 'welcome/index' => 'welcome#index', :as => 'welcome_index'
-  get 'welcome/contact'      
+  get 'welcome/contact' => 'welcome#contact'
   get 'editar/index', :as => 'editar'
-  get 'passengers', :as => 'pasajeros'
 
   
  
